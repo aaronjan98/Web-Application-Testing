@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const Dashboard = () => {
-
+const Dashboard = props => {
+    const [Balls, setBalls] = useState();
     return (
-        <h3>Hello from Dashboard</h3>
+        <div className='Dashboard'>
+            <button className='ball' onClick={() => setBalls(Balls + 1)}>ball</button>
+            <button className='strike'>strike</button>
+            <button className='foul'>foul</button>
+        </div>
     );
 }
 
