@@ -1,5 +1,6 @@
 import React from 'react';
 import { ballState } from '../utils/ball';
+import { strikeState } from '../utils/strike';
 
 const Dashboard = ({ strike, setStrike, ball, setBall }) => {
 
@@ -18,7 +19,7 @@ const Dashboard = ({ strike, setStrike, ball, setBall }) => {
     return (
         <div className='Dashboard'>
             <button className='ball' data-testid="ball-button" onClick={() => setBall(ballState)}>ball</button>
-            <button className='strike' data-testid="strike-button" onClick={() => setStrike(strike+1)}>strike</button>
+            <button className='strike' data-testid="strike-button" onClick={() => setStrike(strikeState)}>strike</button>
             <button className='foul' data-testid="foul-button" onClick={() => foulUpdate()}>foul</button>
             <button className='hit' data-testid="hit-button" onClick={() => {
                 setBall(0);
