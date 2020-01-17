@@ -13,7 +13,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Hello World!</h1>
+      <h1>Baseball Stadium</h1>
       <Display ball={ball} strike={strike} foul={foul} hit={hit}/>
       <Dashboard ball={ball} strike={strike} foul={foul} hit={hit}
       setBall={setBall} setStrike={setStrike} setFoul={setFoul} setHit={setHit}/>
