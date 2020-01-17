@@ -2,12 +2,9 @@ import React from 'react';
 
 const Dashboard = ({ strike, setStrike, ball, setBall }) => {
 
-
-
     if(strike >= 3 || ball >= 4){
         setBall(0);
         setStrike(0);
-
     }
     
     const foulUpdate = () => {
@@ -16,7 +13,6 @@ const Dashboard = ({ strike, setStrike, ball, setBall }) => {
         }else
             setStrike(strike + 1);
     }
-
 
     return (
         <div className='Dashboard'>
