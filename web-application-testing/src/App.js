@@ -1,34 +1,23 @@
 import React, { useState } from 'react';
 import './App.css';
 import Display from './components/Display';
+import Dashboard from './components/Dashboard';
 
 function App() {
-  const [atBat, setAtBat] = useState();
+  let [atBat, setAtBat] = useState(0);
+  let [ball, setBall] = useState(0);
+  let [strike, setStrike] = useState(0);
+  let [foul, setFoul] = useState(0);
+  let [hit, setHit] = useState(0);
 
-  let hit, foul, balls, strikes = 0;
 
-
-  if(strikes >= 3 || balls >= 4){
-    balls = 0;
-    strikes = 0;
-  }
-
-  if(foul){
-    if(strikes === 2){
-      return strikes;
-    } else
-    strikes += 2;
-  }
-
-  if(hit){
-    balls = 0;
-    strikes = 0;
-  }
 
   return (
     <div className="App">
       <h1>Hello World!</h1>
-      <Display />
+      <Display atBat={atBat} ball={ball} strike={strike} foul={foul} hit={hit}/>
+      <Dashboard atBat={atBat} ball={ball} strike={strike} foul={foul} hit={hit}
+      setAtBat={setAtBat} setBall={setBall} setStrike={setStrike} setFoul={setFoul} setHit={setHit}/>
     </div>
   );
 }
