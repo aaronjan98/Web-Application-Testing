@@ -1,30 +1,32 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const Dashboard = ({ atBat, setAtBat, strike, setStrike, ball, setBall, hit, setHit, foul, setFoul }) => {
+const Dashboard = ({ strike, setStrike, ball, setBall }) => {
 
 
 
-    if(strike >= 3 || ball >= 4 || hit === true){
+    if(strike >= 3 || ball >= 4){
         setBall(0);
         setStrike(0);
-        setAtBat(atBat++);
-        console.log(atBat);
+
     }
     
-    if(foul){
-        if(strike === 2){
-            setStrike(strike);
+    const foulUpdate = () => {
+        if(strike >= 2){
+            setStrike(2);
         }else
-            setStrike(strike += 2);
+            setStrike(strike + 1);
     }
 
 
     return (
         <div className='Dashboard'>
-            <button className='ball' onClick={() => setBall(ball++)}>ball</button>
-            <button className='strike' onClick={() => setStrike(strike++)}>strike</button>
-            <button className='foul' onClick={() => setFoul(foul++)}>foul</button>
-            <button className='hit' onClick={() => setHit(hit++)}>hit</button>
+            <button className='ball' onClick={() => setBall(ball+1)}>ball</button>
+            <button className='strike' onClick={() => setStrike(strike+1)}>strike</button>
+            <button className='foul' onClick={() => foulUpdate()}>foul</button>
+            <button className='hit' onClick={() => {
+                setBall(0);
+                setStrike(0);
+            }}>hit</button>
         </div>
     );
 }
